@@ -1,0 +1,18 @@
+{
+  "name": "webtoken",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "Sean Meyer",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2"
+  },
+  "dependencies": {
+    "base64url": "^3.0.1"
+  }
+}
