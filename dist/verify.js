@@ -10,7 +10,7 @@ var verify = function (_a) {
     var token = _a.token, secret = _a.secret;
     var parts = token.split(".");
     if (parts.length !== 3)
-        return new Error("Invalid token");
+        return new Error("Invalid token length");
     var encodedHeader = parts[0], encodedPayload = parts[1], signature = parts[2];
     var candidate = sign_1.createSignature({ encodedHeader: encodedHeader, encodedPayload: encodedPayload, secret: secret });
     if (signature !== candidate)

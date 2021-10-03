@@ -7,7 +7,7 @@ var base64url_1 = __importDefault(require("base64url"));
 var decode = function (token) {
     var parts = token.split(".");
     if (parts.length !== 3)
-        return new Error("Invalid token");
+        return new Error("Invalid token length.");
     var encodedPayload = parts[1];
     return JSON.parse(base64url_1.default.decode(encodedPayload).toString());
 };

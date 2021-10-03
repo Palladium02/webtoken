@@ -37,13 +37,9 @@ var sign = function (_a) {
         typ: "JWT"
     };
     var encodedHeader = base64url_1.default.encode(JSON.stringify(header));
-    // Buffer.from(JSON.stringify(header)).toString("base64url");
     var now = Date.now();
     var expiresIn = now + mergedOptions.expiresIn;
     var encodedPayload = base64url_1.default.encode(JSON.stringify(__assign(__assign({}, payload), { exp: expiresIn })));
-    // Buffer.from(
-    //   JSON.stringify({...payload, exp: expiresIn})
-    // ).toString("base64url");
     var signature = createSignature({ encodedHeader: encodedHeader, encodedPayload: encodedPayload, secret: secret });
     return [encodedHeader, encodedPayload, signature].join(".");
 };

@@ -14,7 +14,7 @@ const isInPast = (exp: number) => {
 const verify = ({ token, secret }: Verify) => {
   let parts = token.split(".");
 
-  if(parts.length !== 3) return new Error("Invalid token");
+  if(parts.length !== 3) return new Error("Invalid token length");
   
   let [encodedHeader, encodedPayload, signature] = parts;
 
